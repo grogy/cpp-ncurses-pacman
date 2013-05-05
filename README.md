@@ -43,10 +43,13 @@ Překlad semestrální práce bude prováděn pomocí příkazu make compile (pr
 
 Velmi doporučuji si před odevzdáním práce vyzkoušet následující sekvenci příkazů (předpokládejme, že chcete odevzdat semestrální práci v souboru `vranyj1.zip`):
 
-`unzip vranyj1.zip`
-`cd vranyj1`
-`make compile`
-`make run`
+`$ unzip vranyj1.zip`
+
+`$ cd vranyj1`
+
+`$ make compile`
+
+`$ make run`
 
 V této sekvenci příkazů by neměla nastat chyba (pokud nastane, vaše semestrální práce bude hodnocena 0 body). 
 
