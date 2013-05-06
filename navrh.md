@@ -7,6 +7,7 @@ Vykreslování
 - vykreslování řešit přes matici (asi char, 2^8 by mělo stačit v pohodě)
 - jednotlivé prvky matice (tedy hodnoty charu) by měly prezentovat jednotlivé znaky, co se budou tisknout
 - jednotlivé znaky prezentovat pomocí konstant, aby se prvky při vykreslování mohly měnit podle potřeby
+- vykreslovat pouze změněné prvky - nebo ne?
 
 Návrh tříd
 ----------
