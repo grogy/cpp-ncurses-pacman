@@ -1,14 +1,11 @@
-#include <ncurses.h>
+#include "view.h"
 
 
 
 int main( void )
 {
-	initscr();
-	mvprintw(5, 10, "Hello");
-	mvprintw(6, 10, "I am Pacman.");
-	getch();
-	endwin();
+	View view;
+	view.run();
 
 	return 0;
 }
