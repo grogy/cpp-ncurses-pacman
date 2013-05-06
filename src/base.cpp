@@ -1,11 +1,6 @@
 #include "view.h"
 
 
-
-int main( void )
-{
-	View view;
-	view.run();
-
+int main( void ) {
 	return 0;
 }
