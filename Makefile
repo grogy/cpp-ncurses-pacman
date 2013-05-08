@@ -11,5 +11,10 @@ base.o: src/base.cpp
 view.o: src/view.h src/view.cpp
 	g++ -c src/view.cpp -o view.o -lncurses
 
+doc:
+	mkdir -p doc
+	doxygen doxygen/config.txt
+
 clean:
 	rm -rf makesvac/ base.o view.o
+	rm -rf doc/
