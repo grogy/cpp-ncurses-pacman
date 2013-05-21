@@ -5,10 +5,10 @@
 
 class Game {
 	public:
-		Game();
-		~Game();
-		void run();
-		void end();
+		Game( void );
+		~Game( void );
+		void run( void );
+		void end( void );
 	private:
 		View * viewLayer;
 		Model * modelLayer;

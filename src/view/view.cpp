@@ -4,33 +4,38 @@
 
 
 
-void View::inicialize( void ) {
+void View::inicialize( void )
+{
 	initscr();
 }
 
 
 
-void View::print( int x, int y, char c ) {
+void View::print( int x, int y, char c )
+{
 	mvaddch(x, y, c);
 }
 
 
 
-void View::printDebug(char * c) {
+void View::printDebug( char * c )
+{
 	mvprintw(0, 0, "string:");
 	mvprintw(0, 10, c);
 }
 
 
 
-void View::printDebug(int i) {
+void View::printDebug( int i )
+{
 	mvprintw(0, 0, "integer:");
 	mvprintw(0, 10, "%d", i);
 }
 
 
 
-char View::getKeyCode( void ) {
+char View::getKeyCode( void )
+{
 	nodelay(stdscr, FALSE);
 	char c = getch();
 
@@ -39,7 +44,8 @@ char View::getKeyCode( void ) {
 
 
 
-char View::getKeyCodeNoDelay( void ) {
+char View::getKeyCodeNoDelay( void )
+{
 	nodelay(stdscr, TRUE);
 	char c = getch(); // -1 pokud nic neni stisknuto
 
@@ -48,13 +54,15 @@ char View::getKeyCodeNoDelay( void ) {
 
 
 
-void View::remove( void ) {
+void View::remove( void )
+{
 	endwin();
 }
 
 
 
-int View::getSizeX() {
+int View::getSizeX( void )
+{
 	int col, row;
 	getmaxyx(stdscr, row, col);
 
@@ -63,7 +71,8 @@ int View::getSizeX() {
 
 
 
-int View::getSizeY() {
+int View::getSizeY( void )
+{
 	int col, row;
 	getmaxyx(stdscr, row, col);
 

@@ -1,4 +1,4 @@
 class Element {
-	Element(ElementType);
-	char getInterpretation();
+	Element( ElementType );
+	char getInterpretation( void );
 };

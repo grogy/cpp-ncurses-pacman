@@ -3,7 +3,8 @@
 
 
 
-Model::Model(int sizeX, int sizeY) {
+Model::Model( int sizeX, int sizeY )
+{
 	// matrix.resize(sizeX);
 	// for (int i = 0; i < sizeX; i++)
 	//	matrix[i].resize(sizeY, 0);
@@ -11,12 +12,14 @@ Model::Model(int sizeX, int sizeY) {
 
 
 
-std::vector<int> Model::get() {
+std::vector<int> Model::get( void )
+{
 	return matrix;
 }
 
 
 
-void Model::set(int x, int y) {
+void Model::set( int x, int y )
+{
 	// matrix[x][y] = 50;
 }

@@ -6,9 +6,9 @@ class View {
 		char getKeyCode( void );
 		char getKeyCodeNoDelay( void );
 
-		int getSizeX();
-		int getSizeY();
+		int getSizeX( void );
+		int getSizeY( void );
 
-		void printDebug(char * c);
-		void printDebug(int i);
+		void printDebug( char * c );
+		void printDebug( int i );
 };

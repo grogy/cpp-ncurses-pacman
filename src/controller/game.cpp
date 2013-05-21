@@ -3,7 +3,7 @@
 
 
 
-Game::Game()
+Game::Game( void )
 {
 	viewLayer = NULL;
 	modelLayer = NULL;
@@ -11,7 +11,7 @@ Game::Game()
 
 
 
-Game::~Game()
+Game::~Game( void )
 {
 	delete viewLayer;
 	delete modelLayer;
@@ -19,7 +19,7 @@ Game::~Game()
 
 
 
-void Game::inicializeObject()
+void Game::inicializeObject( void )
 {
 	viewLayer = new View();
 
@@ -30,7 +30,7 @@ void Game::inicializeObject()
 
 
 
-void Game::inicializeGame()
+void Game::inicializeGame( void )
 {
 	viewLayer->inicialize();
 	viewLayer->printDebug("Welcome in game PACMAN!");
@@ -39,7 +39,7 @@ void Game::inicializeGame()
 
 
 
-void Game::run()
+void Game::run( void )
 {
 	inicializeObject();
 	inicializeGame();
@@ -47,7 +47,7 @@ void Game::run()
 
 
 
-void Game::end()
+void Game::end( void )
 {
 	viewLayer->remove();
 }
