@@ -15,8 +15,8 @@ base.o: src/base.cpp
 	g++ -c src/base.cpp -o base.o -lncurses
 
 
-view.o: src/view.h src/view.cpp
-	g++ -c src/view.cpp -o view.o -lncurses
+view.o: src/view/view.h src/view/view.cpp
+	g++ -c src/view/view.cpp -o view.o -lncurses
 
 
 model.o: src/model/model.h src/model/model.cpp
