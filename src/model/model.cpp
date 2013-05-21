@@ -5,14 +5,18 @@
 
 Model::Model( int sizeX, int sizeY )
 {
-	// matrix.resize(sizeX);
-	// for (int i = 0; i < sizeX; i++)
-	//	matrix[i].resize(sizeY, 0);
+	for (int i = 0; i < sizeX; i++) {
+		matrix.push_back(std::vector<int>());
+	}
+
+	for (int i = 0; i < sizeX; i++)
+		for (int j = 0; j < sizeX; j++)
+			matrix[i].push_back(0);
 }
 
 
 
-std::vector<int> Model::get( void )
+std::vector< std::vector<int> > Model::get( void )
 {
 	return matrix;
 }

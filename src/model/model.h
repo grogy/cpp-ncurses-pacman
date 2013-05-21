@@ -5,8 +5,8 @@
 class Model {
 	public:
 		Model( int sizeX, int sizeY );
-		std::vector<int> get( void );
+		std::vector< std::vector<int> > get( void );
 		void set( int x, int y );
 	private:
-		std::vector<int> matrix;
+		std::vector< std::vector<int> > matrix;
 };
