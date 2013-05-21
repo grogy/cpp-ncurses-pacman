@@ -23,7 +23,7 @@ std::vector< std::vector<int> > Model::get( void )
 
 
 
-void Model::set( int x, int y )
+void Model::set( int x, int y, int value )
 {
-	// matrix[x][y] = 50;
+	matrix[x][y] = value;
 }
