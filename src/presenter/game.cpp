@@ -1,28 +1,53 @@
 #include "game.h"
-#include <iostream>
+#include <cstddef>
 
 
 
-Game::Game() {} //  : viewLayer(NULL), modelLayer(NULL)
+Game::Game()
+{
+	viewLayer = NULL;
+	modelLayer = NULL;
+}
 
 
 
-// void Game::setView(View v) {
-// 	viewLayer = v;
-// }
+Game::~Game()
+{
+	delete viewLayer;
+	delete modelLayer;
+}
 
 
 
-// void Game::setModel(Model m) {
-// 	modelLayer = m;
-// }
+void Game::inicializeObject()
+{
+	viewLayer = new View();
+
+	int sizeX = viewLayer->getSizeX();
+	int sizeY = viewLayer->getSizeY();
+	modelLayer = new Model(sizeX, sizeY);
+}
 
 
 
-int Game::run() {
-	// if (modelLayer == NULL || viewLayer == NULL)
-	// 	return 1;
-	std::cout << "I work!" << std::endl;
+void Game::inicializeGame()
+{
+	viewLayer->inicialize();
+	viewLayer->printDebug("Welcome in game PACMAN!");
+	viewLayer->getKeyCode();
+}
 
-	return 0;
+
+
+void Game::run()
+{
+	inicializeObject();
+	inicializeGame();
+}
+
+
+
+void Game::end()
+{
+	viewLayer->remove();
 }

@@ -1,14 +1,18 @@
-// #include "../view.h"
-// #include "../model/model.h"
+#include "../view.h"
+#include "../model/model.h"
+
 
 
 class Game {
 	public:
 		Game();
-		//void setView(View v);
-		// void setModel(Model m);
-		int run();
+		~Game();
+		void run();
+		void end();
 	private:
-		// View viewLayer;
-		// Model modelLayer;
+		View * viewLayer;
+		Model * modelLayer;
+
+		void inicializeObject();
+		void inicializeGame();
 };
