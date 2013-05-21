@@ -2,9 +2,13 @@ run: compile
 	makesvac/makesvac
 
 
-compile: base.o view.o
+compile: game.o base.o
 	mkdir -p makesvac
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb view.o base.o -o makesvac/makesvac -lncurses
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb game.o base.o -o makesvac/makesvac -lncurses
+
+
+game.o: src/presenter/game.h src/presenter/game.cpp
+	g++ -c src/presenter/game.cpp -o game.o -lncurses
 
 
 base.o: src/base.cpp
@@ -21,5 +25,5 @@ doc:
 
 
 clean:
-	rm -rf makesvac/ base.o view.o
+	rm -rf makesvac/ base.o view.o game.o
 	rm -rf doc/

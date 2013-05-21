@@ -1,6 +1,10 @@
-#include "view.h"
+#include "presenter/game.h"
 
 
-int main( void ) {
+int main( void )
+{
+	Game game = Game();
+	game.run();
+
 	return 0;
 }
