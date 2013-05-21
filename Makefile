@@ -7,8 +7,8 @@ compile: game.o base.o view.o model.o
 	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb view.o game.o model.o base.o -o makesvac/makesvac -lncurses
 
 
-game.o: src/presenter/game.h src/presenter/game.cpp
-	g++ -c src/presenter/game.cpp -o game.o -lncurses
+game.o: src/controller/game.h src/controller/game.cpp
+	g++ -c src/controller/game.cpp -o game.o -lncurses
 
 
 base.o: src/base.cpp
