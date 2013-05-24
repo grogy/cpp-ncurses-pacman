@@ -1,0 +1,3 @@
+class None : public Element {
+	
+};
