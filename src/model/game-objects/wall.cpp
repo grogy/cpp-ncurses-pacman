@@ -2,7 +2,7 @@
 
 
 
-char None::getInterpretation( void )
+char Wall::getInterpretation( void )
 {
-	return '\b2';
+	return 0xb2;
 }

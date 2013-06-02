@@ -1,4 +1,4 @@
-#include "game-objects/element.h"
+#include "game-objects/wall.h"
 #include <vector>
 
 

@@ -19,8 +19,12 @@ view.o: src/view/view.h src/view/view.cpp
 	g++ -c src/view/view.cpp -o view.o -lncurses
 
 
-model.o: src/model/model.h src/model/model.cpp element.o
-	g++ -c src/model/model.cpp -o model.o element.o -lncurses
+model.o: src/model/model.h src/model/model.cpp wall.o element.o
+	g++ -c src/model/model.cpp -o model.o wall.o element.o -lncurses
+
+
+wall.o: src/model/game-objects/wall.h src/model/game-objects/wall.cpp
+	g++ -c src/model/game-objects/wall.cpp -o wall.o -lncurses
 
 
 element.o: src/model/game-objects/element.h src/model/game-objects/element.cpp
