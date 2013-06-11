@@ -18,6 +18,16 @@ void View::print( int x, int y, char c )
 
 
 
+void View::print( std::vector< std::vector<Element*> > matrix )
+{
+	for (int i = 0; i < getSizeX(); i++)
+		for (int j = 0; j < getSizeY(); j++) {
+			mvaddch(0, 10, matrix[i][j]->getInterpretation());
+		}
+}
+
+
+
 void View::printDebug( char * c )
 {
 	mvprintw(0, 0, "string:");

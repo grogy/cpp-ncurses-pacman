@@ -33,7 +33,7 @@ void Game::inicializeObject( void )
 void Game::inicializeGame( void )
 {
 	viewLayer->inicialize();
-	viewLayer->printDebug("Welcome in game PACMAN!");
+	//viewLayer->print(modelLayer->get());
 	viewLayer->getKeyCode();
 }
 

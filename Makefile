@@ -37,5 +37,5 @@ doc:
 
 
 clean:
-	rm -rf makesvac/ base.o view.o game.o model.o element.o
+	rm -rf makesvac/ base.o view.o game.o model.o element.o wall.o
 	rm -rf doc/
