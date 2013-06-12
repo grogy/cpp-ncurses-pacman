@@ -3,7 +3,7 @@ run: compile
 
 
 compile: game.o base.o view.o model.o menu.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o view.o game.o model.o menu.o base.o -o m0akesvac -lncurses
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o view.o game.o model.o menu.o base.o -o makesvac -lmenu -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp

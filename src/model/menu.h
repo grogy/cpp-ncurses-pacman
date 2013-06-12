@@ -1,7 +1,3 @@
-#include <menu.h>
-
-
-
 class Menu {
 	public:
 		Menu( int x, int y );
