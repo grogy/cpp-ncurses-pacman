@@ -22,11 +22,10 @@ Menu::Menu( int x, int y )
 void Menu::show( void )
 {
 	char *choices[] = {
-		"Choice 1",
-		"Choice 2",
-		"Choice 3",
-		"Choice 4",
-		"Exit",
+		"Nova hra - zacatecnik",
+		"Nova hra - pokrocily",
+		"Napoveda",
+		"Konec hry"
 	};
 
 
@@ -48,7 +47,7 @@ void Menu::show( void )
 	my_items[n_choices] = (ITEM *)NULL;
 
 	my_menu = new_menu((ITEM **)my_items);
-	mvprintw(LINES - 2, 0, "F1 to Exit");
+	mvprintw(LINES - 2, 0, "F1 - konec hry");
 	post_menu(my_menu);
 	refresh();
 

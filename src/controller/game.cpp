@@ -8,6 +8,8 @@ Game::Game( void )
 	viewLayer = NULL;
 	modelLayer = NULL;
 	menu = NULL;
+
+	state = 1;
 }
 
 
@@ -37,15 +39,34 @@ void Game::inicializeObject( void )
 void Game::inicializeGame( void )
 {
 	viewLayer->inicialize();
-	//viewLayer->print(modelLayer->get());
-	viewLayer->getKeyCode();
 }
 
 
 
-void Game::showMenu( void )
+void Game::gameAutomat( void )
 {
-	menu->show();
+	while (true) {
+		switch (state) {
+			case 1:
+				inicializeGame();
+				state = 2;
+				break;
+			case 2:
+				menu->show();
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				
+				break;
+			case 5:
+				
+				break;
+			default:
+				throw "Undefined state of game automat.";
+		}
+	}
 }
 
 
@@ -53,7 +74,7 @@ void Game::showMenu( void )
 void Game::run( void )
 {
 	inicializeObject();
-	inicializeGame();
+	gameAutomat();
 }
 
 

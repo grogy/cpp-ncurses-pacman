@@ -14,8 +14,9 @@ class Game {
 		View * viewLayer;
 		Model * modelLayer;
 		Menu * menu;
+		int state;
 
-		void inicializeObject();
-		void inicializeGame();
-		void showMenu();
+		void inicializeObject( void );
+		void inicializeGame( void );
+		void gameAutomat( void );
 };
