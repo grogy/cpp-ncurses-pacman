@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../model/game-objects/element.h"
 #include <vector>
 
@@ -11,6 +13,7 @@ class View {
 
 		// print
 		void print( int x, int y, char c );
+		void print( int x, int y, Element * e );
 		void print( std::vector< std::vector<Element*> > matrix );
 
 		// getters

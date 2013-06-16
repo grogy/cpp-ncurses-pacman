@@ -1,68 +1,58 @@
 // #pragma once
 
 #include <ncurses.h>
-#include <menu.h>
-#include <stdlib.h>
 #include "menu.h"
+#include "game-objects/wall.h"
 
-#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
-#define CTRLD 	4
 using namespace std;
 
 
 
-Menu::Menu( int x, int y )
+Menu::Menu( int x, int y, View * view )
 {
 	this->x = x;
 	this->y = y;
+	viewLayer = view;
 }
 
 
 
-void Menu::show( void )
+int Menu::show( void )
 {
-	char *choices[] = {
-		"Nova hra - zacatecnik",
-		"Nova hra - pokrocily",
-		"Napoveda",
-		"Konec hry"
-	};
+	showBorder();
+	showElements();
+	int state = waitingForKey();
+
+	return state;
+}
 
 
-	ITEM **my_items;
-	int c;				
-	MENU *my_menu;
-	int n_choices, i;
-	ITEM *cur_item;
 
-	cbreak();
-	noecho();
-	keypad(stdscr, TRUE);
-	
-	n_choices = ARRAY_SIZE(choices);
-	my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
+void Menu::showBorder( void )
+{
+	Element * w = new Wall();
 
-	for(i = 0; i < n_choices; ++i)
-		my_items[i] = new_item(choices[i], choices[i]);
-	my_items[n_choices] = (ITEM *)NULL;
-
-	my_menu = new_menu((ITEM **)my_items);
-	mvprintw(LINES - 2, 0, "F1 - konec hry");
-	post_menu(my_menu);
-	refresh();
-
-	while((c = getch()) != KEY_F(1)) {
-		switch(c) {
-			case KEY_DOWN:
-				menu_driver(my_menu, REQ_DOWN_ITEM);
-				break;
-			case KEY_UP:
-				menu_driver(my_menu, REQ_UP_ITEM);
-				break;
-		}
+	for (int i = 0; i < x; i++) {
+		viewLayer->print(i, 0, w);
+		viewLayer->print(i, y-1, w);
 	}
 
-	free_item(my_items[0]);
-	free_item(my_items[1]);
-	free_menu(my_menu);
+	for (int i = 0; i < y; i++) {
+		viewLayer->print(0, i, w);
+		viewLayer->print(x-1, i, w);
+	}
+}
+
+
+
+void Menu::showElements( void )
+{
+
+}
+
+
+
+int Menu::waitingForKey( void )
+{
+	return viewLayer->getKeyCode();
 }

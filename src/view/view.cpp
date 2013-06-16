@@ -13,7 +13,14 @@ void View::inicialize( void )
 
 void View::print( int x, int y, char c )
 {
-	mvaddch(x, y, c);
+	mvaddch(y, x, c);
+}
+
+
+
+void View::print( int x, int y, Element * e )
+{
+	mvaddch(y, x, e->getInterpretation());
 }
 
 
@@ -76,7 +83,7 @@ int View::getSizeX( void )
 	int col, row;
 	getmaxyx(stdscr, row, col);
 
-	return row;
+	return col;
 }
 
 
@@ -86,5 +93,5 @@ int View::getSizeY( void )
 	int col, row;
 	getmaxyx(stdscr, row, col);
 
-	return col;
+	return row;
 }

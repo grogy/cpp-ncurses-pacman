@@ -10,8 +10,10 @@ Model::Model( int sizeX, int sizeY )
 	}
 
 	for (int i = 0; i < sizeX; i++)
-		for (int j = 0; j < sizeX; j++)
-			matrix[i].push_back(new Wall());
+		for (int j = 0; j < sizeX; j++) {
+			Element * e = new Wall();
+			matrix[i].push_back(e);
+		}
 }
 
 

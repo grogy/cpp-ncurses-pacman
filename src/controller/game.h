@@ -10,6 +10,7 @@ class Game {
 		~Game( void );
 		void run( void );
 		void end( void );
+
 	private:
 		View * viewLayer;
 		Model * modelLayer;
@@ -17,6 +18,4 @@ class Game {
 		int state;
 
 		void inicializeObject( void );
-		void inicializeGame( void );
-		void gameAutomat( void );
 };

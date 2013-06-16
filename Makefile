@@ -3,7 +3,7 @@ run: compile
 
 
 compile: game.o base.o view.o model.o menu.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o view.o game.o model.o menu.o base.o -o makesvac -lmenu -lncurses
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o view.o game.o model.o menu.o base.o wall.o -o makesvac -lmenu -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -40,5 +40,5 @@ doc:
 
 
 clean:
-	rm -f makesvac base.o view.o game.o model.o element.o wall.o
+	rm -f makesvac base.o view.o game.o model.o element.o wall.o menu.o
 	rm -rf doc/

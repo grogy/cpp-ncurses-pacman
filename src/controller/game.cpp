@@ -26,33 +26,27 @@ Game::~Game( void )
 void Game::inicializeObject( void )
 {
 	viewLayer = new View();
+	viewLayer->inicialize();
 
 	int sizeX = viewLayer->getSizeX();
 	int sizeY = viewLayer->getSizeY();
 	modelLayer = new Model(sizeX, sizeY);
 
-	menu = new Menu(sizeX, sizeY);
+	menu = new Menu(sizeX, sizeY, viewLayer);
 }
 
 
 
-void Game::inicializeGame( void )
-{
-	viewLayer->inicialize();
-}
-
-
-
-void Game::gameAutomat( void )
+void Game::run( void )
 {
 	while (true) {
 		switch (state) {
 			case 1:
-				inicializeGame();
+				inicializeObject();
 				state = 2;
 				break;
 			case 2:
-				menu->show();
+				state = menu->show();
 				break;
 			case 3:
 				
@@ -64,17 +58,10 @@ void Game::gameAutomat( void )
 				
 				break;
 			default:
+				return;
 				throw "Undefined state of game automat.";
 		}
 	}
-}
-
-
-
-void Game::run( void )
-{
-	inicializeObject();
-	gameAutomat();
 }
 
 
