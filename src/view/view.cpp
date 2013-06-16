@@ -1,4 +1,5 @@
 #include "view.h"
+#include "../model/game-objects/none.h"
 #include <ncurses.h>
 
 
@@ -100,4 +101,19 @@ int View::getSizeY( void )
 	getmaxyx(stdscr, row, col);
 
 	return row;
+}
+
+
+
+void View::clear( void )
+{
+	Element * e = new None();
+
+	for (int i = 0; i < getSizeX(); i++) {
+		for (int j = 0; j < getSizeY(); j++) {
+			print(i, j, e);
+		}
+	}
+
+	delete e;
 }

@@ -18,6 +18,9 @@ class View {
 		void print( std::vector< std::vector<Element*> > matrix );
 		void print( int x, int y, std::string str );
 
+		// base function
+		void clear( void );
+
 		// getters
 		char getKeyCode( void );
 		char getKeyCodeNoDelay( void );
