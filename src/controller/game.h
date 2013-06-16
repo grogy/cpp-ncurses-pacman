@@ -1,6 +1,7 @@
 #include "../view/view.h"
 #include "../model/model.h"
 #include "../model/menu.h"
+#include "../model/page.h"
 
 
 
@@ -15,6 +16,7 @@ class Game {
 		View * viewLayer;
 		Model * modelLayer;
 		Menu * menu;
+		Page * page;
 		int state;
 
 		void inicializeObject( void );

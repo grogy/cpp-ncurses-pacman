@@ -4,5 +4,5 @@
 
 char None::getInterpretation( void )
 {
-	return '\b2';
+	return ' ';
 }

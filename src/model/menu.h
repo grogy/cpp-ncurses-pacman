@@ -15,4 +15,5 @@ class Menu {
 		void showBorder( void );
 		void showElements( void );
 		int waitingForKey( void );
+		int getNewState( int keyCode );
 };

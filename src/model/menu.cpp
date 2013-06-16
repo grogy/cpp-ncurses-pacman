@@ -19,9 +19,11 @@ Menu::Menu( int x, int y, View * view )
 
 int Menu::show( void )
 {
-	showBorder();
+	viewLayer->clear();
 	showElements();
-	int state = waitingForKey();
+	showBorder();
+	int keyCode = waitingForKey();
+	int state = getNewState(keyCode);
 
 	return state;
 }
@@ -52,24 +54,55 @@ void Menu::showElements( void )
 	int x = this->x / 2 - countCharWidth / 2;
 	int y = this->y / 2 - countCharHeight / 2;
 
+	viewLayer->print(x, y++, "==========================");
+	viewLayer->print(x, y++, "|     === Pacman ===     |");
 	viewLayer->print(x, y++, "===========================");
-	viewLayer->print(x, y++, "|      === Pacman ===     |");
-	viewLayer->print(x, y++, "===========================");
-	viewLayer->print(x, y++, "|                         |");
-	viewLayer->print(x, y++, "|   F5 - Easy game        |");
-	viewLayer->print(x, y++, "|                         |");
-	viewLayer->print(x, y++, "|   F6 - Difficult game   |");
-	viewLayer->print(x, y++, "|                         |");
-	viewLayer->print(x, y++, "|   F1 - Help             |");
-	viewLayer->print(x, y++, "|                         |");
-	viewLayer->print(x, y++, "|   F3 - End              |");
-	viewLayer->print(x, y++, "|                         |");
-	viewLayer->print(x, y++, "===========================");
+	viewLayer->print(x, y++, "|                        |");
+	viewLayer->print(x, y++, "|   N - Easy game        |");
+	viewLayer->print(x, y++, "|                        |");
+	viewLayer->print(x, y++, "|   M - Difficult game   |");
+	viewLayer->print(x, y++, "|                        |");
+	viewLayer->print(x, y++, "|   H - Help             |");
+	viewLayer->print(x, y++, "|                        |");
+	viewLayer->print(x, y++, "|   Q - End              |");
+	viewLayer->print(x, y++, "|                        |");
+	viewLayer->print(x, y++, "==========================");
 }
 
 
 
 int Menu::waitingForKey( void )
 {
-	return viewLayer->getKeyCode();
+	while (true) {
+		char code = viewLayer->getKeyCode();
+		switch (code) {
+			case 104: // H
+			case 109: // M
+			case 110: // N
+			case 113: // Q
+				return code;
+			default:
+				continue;
+		};
+	}
+
+	return 0;
+}
+
+
+
+int Menu::getNewState( int keyCode )
+{
+	switch (keyCode) {
+		case 104:
+			return 4;
+		case 109:
+			return 3;
+		case 110:
+			return 3;
+		case 113:
+			return 3;
+		default:
+			throw "Invalid key code in menu.cpp";
+	}
 }

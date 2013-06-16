@@ -2,8 +2,8 @@ run: compile
 	./makesvac
 
 
-compile: game.o base.o view.o model.o menu.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o view.o game.o model.o menu.o base.o wall.o -o makesvac -lmenu -lncurses
+compile: game.o base.o view.o model.o menu.o page.o none.o
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o page.o view.o game.o model.o menu.o base.o wall.o none.o -o makesvac -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -22,6 +22,10 @@ model.o: src/model/model.h src/model/model.cpp wall.o element.o
 	g++ -c src/model/model.cpp -o model.o wall.o element.o -lncurses
 
 
+none.o: src/model/game-objects/none.h src/model/game-objects/none.cpp
+	g++ -c src/model/game-objects/none.cpp -o none.o -lncurses
+
+
 wall.o: src/model/game-objects/wall.h src/model/game-objects/wall.cpp
 	g++ -c src/model/game-objects/wall.cpp -o wall.o -lncurses
 
@@ -31,7 +35,11 @@ element.o: src/model/game-objects/element.h src/model/game-objects/element.cpp
 
 
 menu.o: src/model/menu.h src/model/menu.cpp
-	g++ -c src/model/menu.cpp -o menu.o -lmenu -lncurses
+	g++ -c src/model/menu.cpp -o menu.o -lncurses
+
+
+page.o: src/model/page.h src/model/page.cpp
+	g++ -c src/model/page.cpp -o page.o -lncurses
 
 
 doc:
@@ -40,5 +48,6 @@ doc:
 
 
 clean:
-	rm -f makesvac base.o view.o game.o model.o element.o wall.o menu.o
+	rm -f makesvac
+	rm -f base.o view.o game.o model.o element.o wall.o menu.o page.o none.o
 	rm -rf doc/
