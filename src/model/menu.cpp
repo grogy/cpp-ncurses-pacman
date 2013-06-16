@@ -47,7 +47,10 @@ void Menu::showBorder( void )
 
 void Menu::showElements( void )
 {
-
+	viewLayer->print(12, 7, "F5 - Easy game");
+	viewLayer->print(12, 9, "F6 - Difficult game");
+	viewLayer->print(12, 11, "F1 - Help");
+	viewLayer->print(12, 13, "F3 - End");
 }
 
 
