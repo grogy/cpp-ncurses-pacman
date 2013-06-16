@@ -47,10 +47,24 @@ void Menu::showBorder( void )
 
 void Menu::showElements( void )
 {
-	viewLayer->print(12, 7, "F5 - Easy game");
-	viewLayer->print(12, 9, "F6 - Difficult game");
-	viewLayer->print(12, 11, "F1 - Help");
-	viewLayer->print(12, 13, "F3 - End");
+	int countCharWidth = 27;
+	int countCharHeight = 13;
+	int x = this->x / 2 - countCharWidth / 2;
+	int y = this->y / 2 - countCharHeight / 2;
+
+	viewLayer->print(x, y++, "===========================");
+	viewLayer->print(x, y++, "|      === Pacman ===     |");
+	viewLayer->print(x, y++, "===========================");
+	viewLayer->print(x, y++, "|                         |");
+	viewLayer->print(x, y++, "|   F5 - Easy game        |");
+	viewLayer->print(x, y++, "|                         |");
+	viewLayer->print(x, y++, "|   F6 - Difficult game   |");
+	viewLayer->print(x, y++, "|                         |");
+	viewLayer->print(x, y++, "|   F1 - Help             |");
+	viewLayer->print(x, y++, "|                         |");
+	viewLayer->print(x, y++, "|   F3 - End              |");
+	viewLayer->print(x, y++, "|                         |");
+	viewLayer->print(x, y++, "===========================");
 }
 
 
