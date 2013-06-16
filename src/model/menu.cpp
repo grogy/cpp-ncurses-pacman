@@ -56,7 +56,7 @@ void Menu::showElements( void )
 
 	viewLayer->print(x, y++, "==========================");
 	viewLayer->print(x, y++, "|     === Pacman ===     |");
-	viewLayer->print(x, y++, "===========================");
+	viewLayer->print(x, y++, "==========================");
 	viewLayer->print(x, y++, "|                        |");
 	viewLayer->print(x, y++, "|   N - Easy game        |");
 	viewLayer->print(x, y++, "|                        |");
