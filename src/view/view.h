@@ -2,6 +2,7 @@
 
 #include "../model/game-objects/element.h"
 #include <vector>
+#include <string>
 
 
 
@@ -15,6 +16,7 @@ class View {
 		void print( int x, int y, char c );
 		void print( int x, int y, Element * e );
 		void print( std::vector< std::vector<Element*> > matrix );
+		void print( int x, int y, std::string str );
 
 		// getters
 		char getKeyCode( void );

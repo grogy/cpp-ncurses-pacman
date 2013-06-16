@@ -1,6 +1,5 @@
 #include "view.h"
 #include <ncurses.h>
-#include <string>
 
 
 
@@ -31,6 +30,13 @@ void View::print( std::vector< std::vector<Element*> > matrix )
 		for (int j = 0; j < getSizeY(); j++) {
 			mvaddch(0, 10, matrix[i][j]->getInterpretation());
 		}
+}
+
+
+
+void View::print( int x, int y, std::string str )
+{
+	mvprintw(y, x, str.c_str());
 }
 
 
