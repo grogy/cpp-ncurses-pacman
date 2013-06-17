@@ -9,6 +9,8 @@ Game::Game( void )
 	modelLayer = NULL;
 	menu = NULL;
 	page = NULL;
+	map = NULL;
+	gameLow = NULL;
 
 	state = 1;
 }
@@ -21,6 +23,8 @@ Game::~Game( void )
 	delete modelLayer;
 	delete menu;
 	delete page;
+	delete map;
+	delete gameLow;
 }
 
 
@@ -32,16 +36,21 @@ void Game::inicializeObject( void )
 
 	int sizeX = viewLayer->getSizeX();
 	int sizeY = viewLayer->getSizeY();
-	modelLayer = new Model(sizeX, sizeY);
 
+	modelLayer = new Model(sizeX, sizeY);
 	menu = new Menu(sizeX, sizeY, viewLayer);
 	page = new Page(sizeX, sizeY, viewLayer);
+	map = new Map(sizeX, sizeY);
+	// gameLow = new GameLow(sizeX, sizeY, viewLayer, map);
 }
 
 
 
 void Game::run( void )
 {
+	int x = viewLayer->getSizeX();
+	int y = viewLayer->getSizeY();
+
 	while (true) {
 		switch (state) {
 			// inicialize game
@@ -68,11 +77,21 @@ void Game::run( void )
 
 			// run easy game
 			case 5:
-				
+				state = gameLow->run();
 				break;
 
 			// run difficult game
 			case 6:
+				
+				break;
+
+			// win
+			case 7:
+				
+				break;
+
+			// lose
+			case 8:
 				
 				break;
 

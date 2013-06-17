@@ -2,8 +2,8 @@ run: compile
 	./makesvac
 
 
-compile: game.o base.o view.o model.o menu.o page.o none.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o page.o view.o game.o model.o menu.o base.o wall.o none.o -o makesvac -lncurses
+compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -42,6 +42,14 @@ page.o: src/model/page.h src/model/page.cpp
 	g++ -c src/model/page.cpp -o page.o -lncurses
 
 
+map.o: src/controller/map.h src/controller/map.cpp
+	g++ -c src/controller/map.cpp -o map.o -lncurses
+
+
+gamelow.o: src/controller/gamelow.h src/controller/gamelow.cpp
+	g++ -c src/controller/gamelow.cpp -o gamelow.o -lncurses
+
+
 doc:
 	mkdir -p doc
 	doxygen doxygen/config.txt
@@ -49,5 +57,6 @@ doc:
 
 clean:
 	rm -f makesvac
-	rm -f base.o view.o game.o model.o element.o wall.o menu.o page.o none.o
+	rm -f base.o map.o view.o game.o model.o menu.o page.o gamelow.o
+	rm -f element.o wall.o none.o
 	rm -rf doc/

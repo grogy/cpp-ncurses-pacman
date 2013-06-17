@@ -97,9 +97,9 @@ int Menu::getNewState( int keyCode )
 		case 104:
 			return 4;
 		case 109:
-			return 3;
+			return 3; // 6
 		case 110:
-			return 3;
+			return 5;
 		case 113:
 			return 3;
 		default:
