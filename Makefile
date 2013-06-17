@@ -2,8 +2,8 @@ run: compile
 	./makesvac
 
 
-compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
+compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o coin.o
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o coin.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -34,6 +34,10 @@ element.o: src/model/game-objects/element.h src/model/game-objects/element.cpp
 	g++ -c src/model/game-objects/element.cpp -o element.o -lncurses
 
 
+coin.o: src/model/game-objects/coin.h src/model/game-objects/coin.cpp
+	g++ -c src/model/game-objects/coin.cpp -o coin.o -lncurses
+
+
 menu.o: src/model/menu.h src/model/menu.cpp
 	g++ -c src/model/menu.cpp -o menu.o -lncurses
 
@@ -58,5 +62,5 @@ doc:
 clean:
 	rm -f makesvac
 	rm -f base.o map.o view.o game.o model.o menu.o page.o gamelow.o
-	rm -f element.o wall.o none.o
+	rm -f element.o wall.o none.o coin.o
 	rm -rf doc/

@@ -29,7 +29,7 @@ void View::print( std::vector< std::vector<Element*> > matrix )
 {
 	for (int i = 0; i < getSizeX(); i++)
 		for (int j = 0; j < getSizeY(); j++) {
-			mvaddch(0, 10, matrix[i][j]->getInterpretation());
+			print(i, j, matrix[i][j]);
 		}
 }
 

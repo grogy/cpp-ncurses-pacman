@@ -41,7 +41,7 @@ void Game::inicializeObject( void )
 	menu = new Menu(sizeX, sizeY, viewLayer);
 	page = new Page(sizeX, sizeY, viewLayer);
 	map = new Map(sizeX, sizeY);
-	// gameLow = new GameLow(sizeX, sizeY, viewLayer, map);
+	gameLow = new GameLow(sizeX, sizeY, viewLayer, map);
 }
 
 
@@ -77,7 +77,9 @@ void Game::run( void )
 
 			// run easy game
 			case 5:
-				state = gameLow->run();
+				if (gameLow != NULL)
+					state = gameLow->run();
+				state = 2;
 				break;
 
 			// run difficult game

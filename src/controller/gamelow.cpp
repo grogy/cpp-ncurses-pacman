@@ -15,15 +15,16 @@ GameLow::GameLow( int x, int y, View * view, Map * map)
 
 int GameLow::run( void )
 {
-	// setupGame();
-	viewLayer->getKeyCode();
+	setupGame();
+	map->reset();
 
+	viewLayer->print(map->get());
 	// while (true) {
 	// 	viewLayer->print(map->get());
 	// 	//timeout(300000);
 	// 	//break;
 	// }
-	// viewLayer->getKeyCode();
+	viewLayer->getKeyCode();
 
 	return 2;
 }

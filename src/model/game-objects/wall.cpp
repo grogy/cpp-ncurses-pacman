@@ -4,5 +4,5 @@
 
 char Wall::getInterpretation( void )
 {
-	return 'X';
+	return 'H';
 }
