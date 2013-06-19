@@ -64,7 +64,7 @@ void Page::showHelp( void )
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "|--------------------------------------|");
 	viewLayer->print(x, y++, "|                                      |");
-	viewLayer->print(x, y++, "|   For back to menu press Z           |");
+	viewLayer->print(x, y++, "|   For back to menu press any key     |");
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "========================================");
 }
