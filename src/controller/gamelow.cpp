@@ -42,10 +42,14 @@ int GameLow::run( void )
 
 		// viewLayer->sleep(10000000);
 		c = viewLayer->getKeyCode(); // NoDelay
-		pacman->move(c, map);
+
+		if (map->isWin())
+			return 7;
 
 		if (isEnd(c))
 			return 2;
+
+		pacman->move(c, map);
 	}
 
 	return 2;

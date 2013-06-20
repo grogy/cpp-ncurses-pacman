@@ -81,9 +81,7 @@ void Game::run( void )
 
 			// run easy game
 			case 5:
-				if (gameLow != NULL)
-					state = gameLow->run();
-				state = 2;
+				state = gameLow->run();
 				break;
 
 			// run difficult game
@@ -93,7 +91,8 @@ void Game::run( void )
 
 			// win
 			case 7:
-				
+				page->showWin();
+				state = 2;
 				break;
 
 			// lose

@@ -6,6 +6,7 @@ class Page {
 	public:
 		Page( int x, int y, View * view );
 		void show( void );
+		void showWin( void );
 
 	private:
 		int x;
@@ -14,4 +15,5 @@ class Page {
 
 		void showBorder( void );
 		void showHelp( void );
+		void win( void );
 };

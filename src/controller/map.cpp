@@ -106,3 +106,17 @@ void Map::removeCoin( int x, int y )
 		matrix[x][y] = new None();
 	}
 }
+
+
+
+bool Map::isWin( void )
+{
+	for (int i = 0; i < x; i++) {
+		for (int j = 0; j < y; j++) {
+			if (matrix[i][j]->getType() == 'c')
+				return false;
+		}
+	}
+
+	return true;
+}

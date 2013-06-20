@@ -28,6 +28,19 @@ void Page::show( void )
 
 
 
+void Page::showWin( void )
+{
+	viewLayer->getKeyCode();
+	viewLayer->clear();
+	win();
+	showBorder();
+
+	viewLayer->getKeyCode();
+	viewLayer->getKeyCode();
+}
+
+
+
 void Page::showBorder( void )
 {
 	Element * w = new Wall();
@@ -59,6 +72,28 @@ void Page::showHelp( void )
 	viewLayer->print(x, y++, "|   Arrows - Move left, right, ..      |");
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "|   Q - End (back to menu)             |");
+	viewLayer->print(x, y++, "|                                      |");
+	viewLayer->print(x, y++, "|--------------------------------------|");
+	viewLayer->print(x, y++, "|                                      |");
+	viewLayer->print(x, y++, "|   For back to menu press any key     |");
+	viewLayer->print(x, y++, "|                                      |");
+	viewLayer->print(x, y++, "========================================");
+}
+
+
+
+void Page::win( void )
+{
+	int countCharWidth = 40;
+	int countCharHeight = 11;
+	int x = this->x / 2 - countCharWidth / 2;
+	int y = this->y / 2 - countCharHeight / 2;
+
+	viewLayer->print(x, y++, "========================================");
+	viewLayer->print(x, y++, "|    ===   Win in game Pacman   ===    |");
+	viewLayer->print(x, y++, "========================================");
+	viewLayer->print(x, y++, "|                                      |");
+	viewLayer->print(x, y++, "|       You win. Congratulations.      |");
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "|--------------------------------------|");
 	viewLayer->print(x, y++, "|                                      |");
