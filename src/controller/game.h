@@ -7,11 +7,22 @@
 
 
 
+/**
+ * Zakladni trida spoustejici a ukoncujici hru jako cely program
+ */
 class Game {
 	public:
 		Game( void );
 		~Game( void );
+
+		/**
+		 * Spoustec hry
+		 */
 		void run( void );
+
+		/**
+		 Ukonceni hry (programu)
+		 */
 		void end( void );
 
 	private:
@@ -23,5 +34,8 @@ class Game {
 		GameLow * gameLow;
 		int state;
 
+		/**
+		 * Metoda zajistujici inicializaci objektu
+		 */
 		void inicializeObject( void );
 };
