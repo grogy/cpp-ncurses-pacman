@@ -52,9 +52,6 @@ void Game::inicializeObject( void )
 
 void Game::run( void )
 {
-	int x = viewLayer->getSizeX();
-	int y = viewLayer->getSizeY();
-
 	while (true) {
 		switch (state) {
 			// inicialize game

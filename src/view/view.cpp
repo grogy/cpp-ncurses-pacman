@@ -90,6 +90,7 @@ int View::getSizeX( void )
 {
 	int col, row;
 	getmaxyx(stdscr, row, col);
+	row++; // for not warning
 
 	return col;
 }
