@@ -9,29 +9,43 @@ GameLow::GameLow( int x, int y, View * view, Map * map)
 	this->y = y;
 	viewLayer = view;
 	this->map = map;
+	pacman = new Pacman();
+}
+
+
+
+GameLow::~GameLow()
+{
+	delete pacman;
 }
 
 
 
 int GameLow::run( void )
 {
-	setupGame();
 	map->reset();
+	char c;
 
-	viewLayer->print(map->get());
-	// while (true) {
-	// 	viewLayer->print(map->get());
-	// 	//timeout(300000);
-	// 	//break;
-	// }
-	viewLayer->getKeyCode();
+	while (true) {
+		viewLayer->print(map->get());
+		viewLayer->print(pacman->getX(), pacman->getY(), pacman);
+		// viewLayer->sleep(10000000);
+		c = viewLayer->getKeyCode(); // NoDelay
+		pacman->move(c, map);
+
+		if (isEnd(c))
+			return 2;
+	}
 
 	return 2;
 }
 
 
 
-void GameLow::setupGame( void )
+bool GameLow::isEnd( char c )
 {
-	// nastav panacky na prvni pozice
+	if (c == 'q')
+		return true;
+	else
+		return false;
 }

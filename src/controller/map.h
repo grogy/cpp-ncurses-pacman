@@ -11,6 +11,9 @@ class Map {
 		Map( int sizeX, int sizeY );
 		std::vector< std::vector<Element *> > get( void );
 		void reset( void );
+		int getSizeX( void );
+		int getSizeY( void );
+		bool isValidPosition( int x, int y );
 
 	private:
 		int x;

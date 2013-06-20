@@ -20,6 +20,7 @@ class View {
 
 		// base function
 		void clear( void );
+		void sleep( int microsec );
 
 		// getters
 		char getKeyCode( void );

@@ -1,11 +1,13 @@
 #include "map.h"
 #include "../view/view.h"
+#include "../model/game-objects/pacman.h"
 
 
 
 class GameLow {
 	public:
 		GameLow( int x, int y, View * view, Map * map );
+		~GameLow();
 		int run( void );
 
 	private:
@@ -13,6 +15,7 @@ class GameLow {
 		int y;
 		View * viewLayer;
 		Map * map;
+		Pacman * pacman;
 
-		void setupGame( void );
+		bool isEnd( char c );
 };

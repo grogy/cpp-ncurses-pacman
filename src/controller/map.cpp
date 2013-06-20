@@ -64,3 +64,34 @@ std::vector< std::vector<Element *> > Map::get( void )
 {
 	return matrix;
 }
+
+
+
+int Map::getSizeX( void )
+{
+	return x;
+}
+
+
+
+int Map::getSizeY( void )
+{
+	return y;
+}
+
+
+
+bool Map::isValidPosition( int x, int y )
+{
+	if (x < 0 || y < 0)
+		return false;
+
+	if (this->x < x || this->y < y)
+		return false;
+
+	char type = matrix[x][y]->getType();
+	if (type != 'c' && type != 'n')
+		return false;
+
+	return true;
+}

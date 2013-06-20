@@ -48,7 +48,7 @@ void Page::showBorder( void )
 void Page::showHelp( void )
 {
 	int countCharWidth = 40;
-	int countCharHeight = 15;
+	int countCharHeight = 13;
 	int x = this->x / 2 - countCharWidth / 2;
 	int y = this->y / 2 - countCharHeight / 2;
 
@@ -58,9 +58,7 @@ void Page::showHelp( void )
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "|   Arrows - Move left, right, ..      |");
 	viewLayer->print(x, y++, "|                                      |");
-	viewLayer->print(x, y++, "|   Esc - Back to menu                 |");
-	viewLayer->print(x, y++, "|                                      |");
-	viewLayer->print(x, y++, "|   P - Pause                          |");
+	viewLayer->print(x, y++, "|   Q - End (back to menu)             |");
 	viewLayer->print(x, y++, "|                                      |");
 	viewLayer->print(x, y++, "|--------------------------------------|");
 	viewLayer->print(x, y++, "|                                      |");

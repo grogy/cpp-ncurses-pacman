@@ -1,6 +1,7 @@
 #include "view.h"
 #include "../model/game-objects/none.h"
 #include <ncurses.h>
+#include <unistd.h>
 
 
 
@@ -116,4 +117,13 @@ void View::clear( void )
 	}
 
 	delete e;
+}
+
+
+
+void View::sleep( int microsec )
+{
+	//refresh();
+	wrefresh(stdscr);
+	usleep(microsec);
 }

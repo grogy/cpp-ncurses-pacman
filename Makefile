@@ -2,8 +2,8 @@ run: compile
 	./makesvac
 
 
-compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o coin.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o coin.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
+compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o coin.o pacman.o
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o coin.o pacman.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -28,6 +28,10 @@ none.o: src/model/game-objects/none.h src/model/game-objects/none.cpp
 
 wall.o: src/model/game-objects/wall.h src/model/game-objects/wall.cpp
 	g++ -c src/model/game-objects/wall.cpp -o wall.o -lncurses
+
+
+pacman.o: src/model/game-objects/pacman.h src/model/game-objects/pacman.cpp
+	g++ -c src/model/game-objects/pacman.cpp -o pacman.o -lncurses
 
 
 element.o: src/model/game-objects/element.h src/model/game-objects/element.cpp
@@ -62,5 +66,5 @@ doc:
 clean:
 	rm -f makesvac
 	rm -f base.o map.o view.o game.o model.o menu.o page.o gamelow.o
-	rm -f element.o wall.o none.o coin.o
+	rm -f element.o wall.o none.o coin.o pacman.o
 	rm -rf doc/

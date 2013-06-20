@@ -7,4 +7,5 @@
 class None : public Element {
 	public:
 		char getInterpretation( void );
+		char getType( void );
 };
