@@ -32,6 +32,8 @@ int GameLow::run( void )
 
 	while (true) {
 		map->removeCoin(pacman->getX(), pacman->getY());
+		if (isLose())
+			return 8;
 		viewLayer->print(map->get());
 		viewLayer->print(pacman->getX(), pacman->getY(), pacman);
 
@@ -39,6 +41,8 @@ int GameLow::run( void )
 			monsters[i]->move(map);
 			viewLayer->print(monsters[i]->getX(), monsters[i]->getY(), monsters[i]);
 		}
+		if (isLose())
+			return 8;
 
 		// viewLayer->sleep(10000000);
 		c = viewLayer->getKeyCode(); // NoDelay
@@ -61,6 +65,26 @@ bool GameLow::isEnd( char c )
 {
 	if (c == 'q')
 		return true;
-	else
-		return false;
+	return false;
+}
+
+
+
+bool GameLow::checkLose( Pacman * p, Monster * m)
+{
+	if (p->getX() == m->getX() && p->getY() == m->getY())
+		return true;
+	return false;
+}
+
+
+
+bool GameLow::isLose()
+{
+	for (int i = 0; i < 5; i++) {
+		if (checkLose(pacman, monsters[i]))
+			return true;
+	}
+
+	return false;
 }

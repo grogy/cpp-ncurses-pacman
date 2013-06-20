@@ -86,7 +86,7 @@ void Game::run( void )
 
 			// run difficult game
 			case 6:
-				
+				// not implement
 				break;
 
 			// win
@@ -97,7 +97,8 @@ void Game::run( void )
 
 			// lose
 			case 8:
-				
+				page->showLose();
+				state = 2;
 				break;
 
 			default:

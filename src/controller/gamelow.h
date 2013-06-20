@@ -20,5 +20,7 @@ class GameLow {
 		Pacman * pacman;
 		Monster * monsters[5];
 
+		bool isLose();
+		bool checkLose( Pacman * pacman, Monster * monster);
 		bool isEnd( char c );
 };
