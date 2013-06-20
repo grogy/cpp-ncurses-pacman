@@ -31,6 +31,7 @@ int GameLow::run( void )
 	char c;
 
 	while (true) {
+		map->removeCoin(pacman->getX(), pacman->getY());
 		viewLayer->print(map->get());
 		viewLayer->print(pacman->getX(), pacman->getY(), pacman);
 

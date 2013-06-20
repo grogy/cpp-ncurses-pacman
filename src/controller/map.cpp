@@ -1,4 +1,5 @@
 #include "map.h"
+#include "../model/game-objects/none.h"
 
 
 
@@ -94,4 +95,14 @@ bool Map::isValidPosition( int x, int y )
 		return false;
 
 	return true;
+}
+
+
+
+void Map::removeCoin( int x, int y )
+{
+	if (matrix[x][y]->getType() == 'c') {
+		delete matrix[x][y];
+		matrix[x][y] = new None();
+	}
 }

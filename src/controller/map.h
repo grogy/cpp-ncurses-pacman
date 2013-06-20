@@ -14,6 +14,7 @@ class Map {
 		int getSizeX( void );
 		int getSizeY( void );
 		bool isValidPosition( int x, int y );
+		void removeCoin( int x, int y );
 
 	private:
 		int x;
