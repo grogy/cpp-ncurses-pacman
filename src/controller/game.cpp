@@ -1,5 +1,7 @@
 #include "game.h"
 #include <cstddef>
+#include <time.h>
+#include <cstdlib>
 
 
 
@@ -13,6 +15,8 @@ Game::Game( void )
 	gameLow = NULL;
 
 	state = 1;
+
+	srand(time(NULL)); // pro generovani rand
 }
 
 

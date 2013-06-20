@@ -1,6 +1,8 @@
 #include "map.h"
 #include "../view/view.h"
 #include "../model/game-objects/pacman.h"
+#include "../model/game-objects/monster.h"
+#include <vector>
 
 
 
@@ -16,6 +18,7 @@ class GameLow {
 		View * viewLayer;
 		Map * map;
 		Pacman * pacman;
+		Monster * monsters[5];
 
 		bool isEnd( char c );
 };

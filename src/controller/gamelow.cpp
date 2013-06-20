@@ -10,6 +10,8 @@ GameLow::GameLow( int x, int y, View * view, Map * map)
 	viewLayer = view;
 	this->map = map;
 	pacman = new Pacman();
+	for (int i = 0; i < 5; i++)
+		monsters[i] = new Monster();
 }
 
 
@@ -17,6 +19,8 @@ GameLow::GameLow( int x, int y, View * view, Map * map)
 GameLow::~GameLow()
 {
 	delete pacman;
+	for (int i = 0; i < 5; i++)
+		delete monsters[i];
 }
 
 
@@ -29,6 +33,12 @@ int GameLow::run( void )
 	while (true) {
 		viewLayer->print(map->get());
 		viewLayer->print(pacman->getX(), pacman->getY(), pacman);
+
+		for (int i = 0; i < 5; i++) {
+			monsters[i]->move(map);
+			viewLayer->print(monsters[i]->getX(), monsters[i]->getY(), monsters[i]);
+		}
+
 		// viewLayer->sleep(10000000);
 		c = viewLayer->getKeyCode(); // NoDelay
 		pacman->move(c, map);
