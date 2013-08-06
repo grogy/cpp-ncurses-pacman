@@ -21,7 +21,7 @@ Game::Game( void )
 
 
 
-Game::~Game( void )
+Game::~Game()
 {
 	delete viewLayer;
 	delete modelLayer;
@@ -41,7 +41,6 @@ void Game::inicializeObject( void )
 	int sizeX = viewLayer->getSizeX();
 	int sizeY = viewLayer->getSizeY();
 
-	modelLayer = new Model(sizeX, sizeY);
 	menu = new Menu(sizeX, sizeY, viewLayer);
 	page = new Page(sizeX, sizeY, viewLayer);
 	map = new Map(sizeX, sizeY);

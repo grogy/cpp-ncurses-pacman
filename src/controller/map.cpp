@@ -22,6 +22,15 @@ Map::Map( int sizeX, int sizeY )
 
 
 
+Map::~Map()
+{
+	for (int i = 0; i < x; i++)
+		for (int j = 0; j < y; j++)
+			delete matrix[i][j];
+}
+
+
+
 void Map::reset( void )
 {
 	for (int i = 0; i < x; i++) {

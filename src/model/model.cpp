@@ -5,6 +5,9 @@
 
 Model::Model( int sizeX, int sizeY )
 {
+	x = sizeX;
+	y = sizeY;
+
 	for (int i = 0; i < sizeX; i++) {
 		matrix.push_back(std::vector<Element*>());
 	}

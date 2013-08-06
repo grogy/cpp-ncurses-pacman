@@ -4,12 +4,16 @@ using namespace std;
 
 
 
+/**
+ * Start game
+ */
 int main( void )
 {
 	try {
-		Game game = Game();
-		game.run();
-		game.end();
+		Game * game = new Game();
+		game->run();
+		game->end();
+		delete game;
 	} catch (const char * s) {
 		cerr << s << endl;
 		return 1;
