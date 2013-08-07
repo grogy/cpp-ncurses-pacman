@@ -2,7 +2,7 @@ all: doc run
 
 
 run: compile
-	./makesvac
+	./pacman
 
 
 doc:
@@ -11,7 +11,7 @@ doc:
 
 
 compile: game.o base.o view.o model.o menu.o page.o none.o gamelow.o map.o monster.o coin.o pacman.o
-	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o monster.o coin.o pacman.o game.o model.o menu.o base.o wall.o none.o map.o -o makesvac -lncurses
+	g++ -Wall -pedantic -Wno-long-long -O0 -ggdb element.o gamelow.o page.o view.o monster.o coin.o pacman.o game.o model.o menu.o base.o wall.o none.o map.o -o pacman -lncurses
 
 
 game.o: src/controller/game.h src/controller/game.cpp
@@ -71,7 +71,7 @@ coin.o: src/model/game-objects/coin.h src/model/game-objects/coin.cpp
 
 
 clean:
-	rm -f makesvac
+	rm -f pacman
 	rm -f base.o map.o view.o game.o model.o menu.o page.o gamelow.o
 	rm -f element.o wall.o none.o coin.o pacman.o monster.o
 	rm -rf doc/
