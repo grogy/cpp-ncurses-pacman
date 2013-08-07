@@ -1,8 +1,7 @@
 INPUT = src
 PROJECT_NAME = Pacman
-PROJECT_BRIEF = "Pacman v ncurses pro předmět BIK-PA2."
+PROJECT_BRIEF = "Pacman game in library ncurses - for course BIK-PA2."
 HTML_OUTPUT = doc
-OUTPUT_LANGUAGE = Czech
 GENERATE_LATEX = NO
 EXTRACT_ALL = YES
 HAVE_DOT = YES
